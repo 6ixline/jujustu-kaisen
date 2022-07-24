@@ -8,12 +8,8 @@ app.use(express.json())
 
 
 app.get("/chapters", async (req, res) =>{
-   try{ 
      const data =  await chapertlist();
      res.status(200).send(data);
-   }catch(e){
-      res.status(400).send(e);
-   }
 })
 app.post("/chapterdetails", (req, res) =>{
    const chapterlink = req.body.chapterlink;
