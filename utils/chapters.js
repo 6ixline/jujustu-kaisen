@@ -9,7 +9,7 @@ async function chapterList(){
         const page = await brower.newPage();
         await page.goto('https://readkaisen.com/');
         const data = await page.evaluate(function(){
-            const chapterLinks = document.querySelectorAll(".table tbody tr");
+            const chapterLinks = document.querySelectorAll(".table tbody t");
             const array = [];
             let episode = chapterLinks.length;
 
