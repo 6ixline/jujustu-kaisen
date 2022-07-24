@@ -8,8 +8,6 @@ app.use(express.json())
 
 
 app.get("/chapters", async (req, res) =>{
-   res.setHeader("Content-Type", "text/html; charset=utf-8")
-   res.setHeader("Transfer-Encoding", "chunked")
    try{ 
      const data =  await chapertlist();
      res.status(200).send(data);
