@@ -6,16 +6,11 @@ const app = express()
 const port = process.env.PORT || 3000
 app.use(express.json())
 
-app.get("/test", (req,res)=>{
-   res.send("testing");
-})
 
-
-app.get("/chapters", (req, res) =>{
+app.get("/chapters", async (req, res) =>{
    try{ 
-      chapertlist().then(function(data){
-         res.send(data);
-      });
+     const data =  await chapertlist();
+     res.status(200).send(data);
    }catch(e){
       res.status(400).send(e);
    }
