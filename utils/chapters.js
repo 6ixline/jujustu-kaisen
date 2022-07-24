@@ -2,7 +2,10 @@ const pp = require('puppeteer');
 
 async function chapterList(){
     try{  
-        const brower = await pp.launch();
+        const brower = await pp.launch({
+            headless: true,
+            args:['--no-sandbox']
+        });
         const page = await brower.newPage();
         await page.goto('https://readkaisen.com/');
         const data = await page.evaluate(function(){
