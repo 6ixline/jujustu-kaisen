@@ -22,7 +22,7 @@ app.post("/chapterdetails", (req, res) =>{
          chapterdetails(chapterlink).then(function(data){
             res.status(200).send(data);
          }).catch((e)=>{
-            res.status(400).send({"error": e.originalMessage})
+            res.status(400).send({"error1": e.originalMessage})
          })
       }else{
          res.status(404).send({"error":"Chapter link is empty"});
