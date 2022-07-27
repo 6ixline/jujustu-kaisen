@@ -37,9 +37,6 @@ const minimal_args = [
    '--use-gl=swiftshader',
    '--use-mock-keychain',
  ];
-
- 
-
 async function chapterdetails(chapterlinks){
     const brower = await pp.launch({
       headless: true,

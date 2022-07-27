@@ -1,0 +1,2 @@
+[0727/231831.908:INFO:CONSOLE(2)] "JQMIGRATE: Migrate is installed, version 3.3.2", source: https://readkaisen.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2 (2)
+[0727/231834.677:INFO:CONSOLE(7)] "Your client application uses libraries for user authentication or authorization that will soon be deprecated. See the [Migration Guide](https://developers.google.com/identity/gsi/web/guides/gis-migration) for more information.", source: https://c.disquscdn.com/next/embed/common.bundle.33bc87b2c4f9324203cc85b7dd1d0492.js (7)
