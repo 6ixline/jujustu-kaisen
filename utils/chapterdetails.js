@@ -8,7 +8,7 @@ async function chapterdetails(chapterlinks){
     const page = await brower.newPage();
     await page.goto(chapterlinks);
     const chapterImages = await page.evaluate(function(){
-       const images = document.querySelectorAll(".flex picture");
+       const images = document.querySelectorAll(".img_container");
        
        const array = [];
 

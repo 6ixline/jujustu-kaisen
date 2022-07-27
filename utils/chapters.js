@@ -9,12 +9,12 @@ async function chapterList(){
         const page = await brower.newPage();
         await page.goto('https://readkaisen.com/');
         const data = await page.evaluate(function(){
-            const chapterLinks = document.querySelectorAll(".table tbody tr");
+            const chapterLinks = document.querySelectorAll(".maniac_posts .chap_tab tr");
             const array = [];
             let episode = chapterLinks.length;
 
             for(i=0; i< chapterLinks.length; i++){
-                array.push('https://readkaisen.com' + chapterLinks[i].querySelectorAll("td a")['1'].getAttribute("href"));
+                array.push(chapterLinks[i].querySelector("a").getAttribute("href"));
                 episode--;
             }
             return array
