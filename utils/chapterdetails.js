@@ -37,7 +37,7 @@ const minimal_args = [
    '--use-gl=swiftshader',
    '--use-mock-keychain',
  ];
-async function chapterdetails(chapterlinks){
+async function chapterdetails(chapterlinks, chapterRoute, checkReq){
     const brower = await pp.launch({
       headless: true,
       args:minimal_args,
@@ -45,17 +45,21 @@ async function chapterdetails(chapterlinks){
   });
     const page = await brower.newPage();
     await page.goto(chapterlinks);
-    const chapterImages = await page.evaluate(function(){
-       const images = document.querySelectorAll(".img_container");
+    const chapterImages = await page.evaluate(function(chapterRoute, checkReq){
+       const images = document.querySelectorAll(chapterRoute);
        
        const array = [];
 
        for(i=0; i< images.length; i++){
-            array.push(images[i].querySelector("img").src);
+            if(checkReq){
+               array.push(images[i].querySelector("img").src);
+            }else{
+               array.push(images[i].src);
+            }
        }
        return array
-    })
-
+    }, chapterRoute, checkReq)
+    brower.close();
    return chapterImages;
 };
 

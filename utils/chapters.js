@@ -38,7 +38,7 @@ const minimal_args = [
     '--use-mock-keychain',
   ];
   
-async function chapterList(){
+async function chapterList(url, chapterroute, linkRoute){
     try{  
         const brower = await pp.launch({
             headless: true,
@@ -46,19 +46,20 @@ async function chapterList(){
             userDataDir: './my/path'
         });
         const page = await brower.newPage();
-        await page.goto('https://readkaisen.com/');
-        const data = await page.evaluate(function(){
-            const chapterLinks = document.querySelectorAll(".maniac_posts .chap_tab tr");
+        await page.goto(url);
+        const data = await page.evaluate(function(chapterroute, linkRoute){
+            console.log('test')
+            const chapterLinks = document.querySelectorAll(chapterroute);
             const array = [];
             let episode = chapterLinks.length;
 
-            for(i=0; i< chapterLinks.length; i++){
-                array.push(chapterLinks[i].querySelector("a").getAttribute("href"));
+            for(i=0; i < chapterLinks.length; i++){
+                array.push(chapterLinks[i].querySelector(linkRoute).getAttribute("href"));
                 episode--;
             }
             return array
-        })
-
+        }, chapterroute, linkRoute)
+        brower.close();
         return data;
     }catch(e){
         console.log("Error! Something wrong")
