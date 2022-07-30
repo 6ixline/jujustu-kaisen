@@ -31,6 +31,14 @@ app.get("/hero/chapters", async (req, res) =>{
       res.status(400).send(e);
    }
 })
+app.get("/one/chapters", async (req, res) =>{
+   try{ 
+     const data =  await chapertlist("https://punch.ldkmanga.com/", "#ceo_latest_comics_widget-3 ul li", "a");
+     res.status(200).send(data);
+   }catch(e){
+      res.status(400).send(e);
+   }
+})
 app.post("/jujutsu/chapterdetails", (req, res) =>{
    const chapterlink = req.body.chapterlink;
    try{
@@ -68,6 +76,22 @@ app.post("/hero/chapterdetails", (req, res) =>{
    try{
       if(chapterlink != ""){
          chapterdetails(chapterlink, ".entry-content center img", false).then(function(data){
+            res.status(200).send(data);
+         }).catch((e)=>{
+            res.status(400).send({"error": e.originalMessage})
+         })
+      }else{
+         res.status(404).send({"error":"Chapter link is empty"});
+      }
+   }catch(e){
+      res.status(400).send(e);
+   }
+}) 
+app.post("/one/chapterdetails", (req, res) =>{
+   const chapterlink = req.body.chapterlink;
+   try{
+      if(chapterlink != ""){
+         chapterdetails(chapterlink, ".entry-content img", false).then(function(data){
             res.status(200).send(data);
          }).catch((e)=>{
             res.status(400).send({"error": e.originalMessage})
