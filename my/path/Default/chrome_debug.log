@@ -1,15 +1,17 @@
-[0802/080028.560:INFO:CONSOLE(1)] "*** Protag: Init protag version: "1.2.7"", source: https://protagcdn.com/s/myheromanga.me/site.js (1)
-[0802/080029.185:INFO:CONSOLE(2)] "JQMIGRATE: Migrate is installed, version 3.3.2", source: https://read.myheromanga.me/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2 (2)
-[0802/080029.193:INFO:CONSOLE(134)] "Failed to set referrer policy: The value '' is not one of 'always', 'default', 'never', 'origin-when-crossorigin', 'no-referrer', 'no-referrer-when-downgrade', 'origin', 'origin-when-cross-origin', 'same-origin', 'strict-origin', 'strict-origin-when-cross-origin', or 'unsafe-url'. The referrer policy has been left unchanged.", source: https://read.myheromanga.me/manga/my-hero-academia-chapter-353/ (134)
-[0802/080040.951:INFO:CONSOLE(6)] "Invalid GPT fixed size specification: []", source: https://securepubads.g.doubleclick.net/gpt/pubads_impl_2022072702.js (6)
-[0802/080041.205:INFO:CONSOLE(0)] "Refused to display 'https://protagcdn.com/' in a frame because it set 'X-Frame-Options' to 'sameorigin'.", source: chrome-error://chromewebdata/ (0)
-[0802/080041.854:INFO:CONSOLE(1)] "***PA***  proads.space script (version 1.7.26) has been loaded successfully. More info: https://proads.space", source: https://cdn.proadscdn.com/s/script.protag/script.protag.js (1)
-[0802/080041.855:INFO:CONSOLE(1)] "initializing", source: https://cdn.proadscdn.com/s/script.protag/script.protag.js (1)
-[0802/080041.862:INFO:CONSOLE(1)] "***PA***  Ad unit with id 'protag-in_article_video' already exists!", source: https://cdn.proadscdn.com/s/script.protag/script.protag.js (1)
-[0802/080043.916:INFO:CONSOLE(7)] "Your client application uses libraries for user authentication or authorization that will soon be deprecated. See the [Migration Guide](https://developers.google.com/identity/gsi/web/guides/gis-migration) for more information.", source: https://c.disquscdn.com/next/embed/common.bundle.33bc87b2c4f9324203cc85b7dd1d0492.js (7)
-[0802/080045.613:INFO:CONSOLE(0)] "[.WebGL-00006A7E0147F100]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels", source: https://shieldfraud.com/?id=37580600094c316c0dd640046600400f (0)
-[0802/080045.683:INFO:CONSOLE(2)] "Uncaught (in promise) ReferenceError: Notification is not defined", source: https://shieldfraud.com/static/js/2.32ef99b0.chunk.js (2)
-[0802/080048.677:ERROR:ssl_client_socket_impl.cc(983)] handshake failed; returned -1, SSL error code 1, net_error -101
-[0802/080048.902:ERROR:ssl_client_socket_impl.cc(983)] handshake failed; returned -1, SSL error code 1, net_error -101
-[0802/080049.014:ERROR:ssl_client_socket_impl.cc(983)] handshake failed; returned -1, SSL error code 1, net_error -101
-[0802/080049.317:ERROR:ssl_client_socket_impl.cc(983)] handshake failed; returned -1, SSL error code 1, net_error -101
+[0802/085939.229:INFO:CONSOLE(1)] "%cPurpleAds Floating background: #0041D0; color: #fff; border-radius:2px; padding:2px 4px; font-size:11px; Version: 1.0.1", source: https://cdn.purpleads.io/load.js?publisherId=265c1de43660b1c7cce4b3102e8e4a0e:bf4dc8bbe9ea40673ab8fe9a52916f0a4c286e0d334b61121a4f911ed94440a76204f0458937471d5922ea99f49bcc4eff34dda0922fcce349a816d22614422f (1)
+[0802/085939.948:INFO:CONSOLE(245)] "Uncaught TagError: adsbygoogle.push() error: No slot size for availableWidth=0", source: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3327298579154787 (245)
+[0802/085939.948:INFO:CONSOLE(245)] "Uncaught TagError: adsbygoogle.push() error: No slot size for availableWidth=0", source: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3327298579154787 (245)
+[0802/085939.948:INFO:CONSOLE(245)] "Uncaught TagError: adsbygoogle.push() error: No slot size for availableWidth=0", source: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3327298579154787 (245)
+[0802/085939.964:INFO:CONSOLE(1)] "OneSignal: Using fallback ES5 Stub for backwards compatibility.", source: https://cdn.onesignal.com/sdks/OneSignalSDK.js (1)
+[0802/085939.972:INFO:CONSOLE(1)] "%cPurpleAds Display background: #7434eb; color: #fff; border-radius:2px; padding:2px 4px; font-size:11px; [8:59:39] [c6ada9e9753b4ba88b6a4ec8cb139381] Version: 2.2.2", source: https://cdn.purpleads.io/agent.js?publisherId=265c1de43660b1c7cce4b3102e8e4a0e:bf4dc8bbe9ea40673ab8fe9a52916f0a4c286e0d334b61121a4f911ed94440a76204f0458937471d5922ea99f49bcc4eff34dda0922fcce349a816d22614422f (1)
+[0802/090159.883:ERROR:cache_util_win.cc(20)] Unable to move the cache: Access is denied. (0x5)
+[0802/090159.883:ERROR:disk_cache.cc(205)] Unable to create cache
+[0802/090159.883:ERROR:shader_disk_cache.cc(617)] Shader Cache Creation failed: -2
+[0802/090200.251:ERROR:cache_util_win.cc(20)] Unable to move the cache: Access is denied. (0x5)
+[0802/090200.251:ERROR:disk_cache.cc(205)] Unable to create cache
+[0802/090205.948:INFO:CONSOLE(1)] "%cPurpleAds Floating background: #0041D0; color: #fff; border-radius:2px; padding:2px 4px; font-size:11px; Version: 1.0.1", source: https://cdn.purpleads.io/load.js?publisherId=265c1de43660b1c7cce4b3102e8e4a0e:bf4dc8bbe9ea40673ab8fe9a52916f0a4c286e0d334b61121a4f911ed94440a76204f0458937471d5922ea99f49bcc4eff34dda0922fcce349a816d22614422f (1)
+[0802/090208.863:INFO:CONSOLE(1)] "%cPurpleAds Display background: #7434eb; color: #fff; border-radius:2px; padding:2px 4px; font-size:11px; [9:2:8] [1c05167e7d864d919a11822dc5e52ba7] Version: 2.2.2", source: https://cdn.purpleads.io/agent.js?publisherId=265c1de43660b1c7cce4b3102e8e4a0e:bf4dc8bbe9ea40673ab8fe9a52916f0a4c286e0d334b61121a4f911ed94440a76204f0458937471d5922ea99f49bcc4eff34dda0922fcce349a816d22614422f (1)
+[0802/090209.047:INFO:CONSOLE(245)] "Uncaught TagError: adsbygoogle.push() error: No slot size for availableWidth=0", source: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3327298579154787 (245)
+[0802/090209.047:INFO:CONSOLE(245)] "Uncaught TagError: adsbygoogle.push() error: No slot size for availableWidth=0", source: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3327298579154787 (245)
+[0802/090209.047:INFO:CONSOLE(245)] "Uncaught TagError: adsbygoogle.push() error: No slot size for availableWidth=0", source: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3327298579154787 (245)
+[0802/090221.410:INFO:CONSOLE(1)] "OneSignal: Using fallback ES5 Stub for backwards compatibility.", source: https://cdn.onesignal.com/sdks/OneSignalSDK.js (1)
