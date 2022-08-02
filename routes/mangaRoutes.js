@@ -24,7 +24,7 @@ router.get("/jujutsu/chapters", async (req, res) =>{
  })
  router.get("/hero/chapters", async (req, res) =>{
     try{ 
-      const data =  await chapertlist("https://heroacademia-manga.com/", ".su-posts-list-loop li", "a");
+      const data =  await chapertlist("https://read.myheromanga.me/", "#ceo_latest_comics_widget-3 li", "a");
       res.status(200).send(data);
     }catch(e){
        res.status(400).send(e);
@@ -74,7 +74,7 @@ router.get("/jujutsu/chapters", async (req, res) =>{
     const chapterlink = req.body.chapterlink;
     try{
        if(chapterlink != ""){
-          chapterdetails(chapterlink, ".entry-content center img", false).then(function(data){
+          chapterdetails(chapterlink, "#showmanga-select-chapter img", false).then(function(data){
              res.status(200).send(data);
           }).catch((e)=>{
              res.status(400).send({"error": e.originalMessage})
