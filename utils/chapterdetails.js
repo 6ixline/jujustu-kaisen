@@ -37,14 +37,22 @@ const minimal_args = [
    '--use-gl=swiftshader',
    '--use-mock-keychain',
  ];
-async function chapterdetails(chapterlinks, chapterRoute, checkReq){
+async function chapterdetails(chapterlinks, chapterRoute, checkReq, checkScroll){
     const brower = await pp.launch({
-      headless: true,
+      headless: true ,
       args:minimal_args,
       userDataDir: './my/path'
   });
     const page = await brower.newPage();
     await page.goto(chapterlinks);
+    if(checkScroll){
+      await page.setViewport({
+         width: 1200,
+         height: 800
+      });
+     await autoScroll(page);
+    }
+   
     const chapterImages = await page.evaluate(function(chapterRoute, checkReq){
        const images = document.querySelectorAll(chapterRoute);
        
@@ -52,9 +60,13 @@ async function chapterdetails(chapterlinks, chapterRoute, checkReq){
 
        for(i=0; i< images.length; i++){
             if(checkReq){
-               array.push(images[i].querySelector("img").src);
+               if(images[i].querySelector("img").src != ""){
+                  array.push(images[i].querySelector("img").src);
+               }
             }else{
-               array.push(images[i].src);
+               if(images[i].src != ""){
+                  array.push(images[i].src);
+               }
             }
        }
        return array
@@ -62,5 +74,24 @@ async function chapterdetails(chapterlinks, chapterRoute, checkReq){
     brower.close();
    return chapterImages;
 };
+
+async function autoScroll(page){
+   await page.evaluate(async () => {
+       await new Promise((resolve, reject) => {
+           var totalHeight = 0;
+           var distance = 100;
+           var timer = setInterval(() => {
+               var scrollHeight = document.body.scrollHeight;
+               window.scrollBy(0, distance);
+               totalHeight += distance;
+
+               if(totalHeight >= scrollHeight - window.innerHeight){
+                   clearInterval(timer);
+                   resolve();
+               }
+           }, 100);
+       });
+   });
+}
 
 module.exports = chapterdetails;

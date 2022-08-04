@@ -48,13 +48,16 @@ async function chapterList(url, chapterroute, linkRoute){
         const page = await brower.newPage();
         await page.goto(url);
         const data = await page.evaluate(function(chapterroute, linkRoute){
-            console.log('test')
             const chapterLinks = document.querySelectorAll(chapterroute);
             const array = [];
             let episode = chapterLinks.length;
 
+            console.log(chapterLinks[0].querySelector(linkRoute).getAttribute("href"))
+
             for(i=0; i < chapterLinks.length; i++){
-                array.push(chapterLinks[i].querySelector(linkRoute).getAttribute("href"));
+                if(chapterLinks[i].querySelector(linkRoute) != null){
+                    array.push(chapterLinks[i].querySelector(linkRoute).getAttribute("href"));
+                }
                 episode--;
             }
             return array
@@ -62,7 +65,7 @@ async function chapterList(url, chapterroute, linkRoute){
         brower.close();
         return data;
     }catch(e){
-        console.log("Error! Something wrong")
+        console.log("Error! Something wrong", e)
     }
 }
 

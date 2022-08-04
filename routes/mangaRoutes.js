@@ -24,7 +24,7 @@ router.get("/jujutsu/chapters", async (req, res) =>{
  })
  router.get("/hero/chapters", async (req, res) =>{
     try{ 
-      const data =  await chapertlist("https://read.myheromanga.me/", "#ceo_latest_comics_widget-3 li", "a");
+      const data =  await chapertlist("https://muheroacademia.com/", ".version-chap li", ".col-6 a");
       res.status(200).send(data);
     }catch(e){
        res.status(400).send(e);
@@ -50,7 +50,7 @@ router.get("/jujutsu/chapters", async (req, res) =>{
     const chapterlink = req.body.chapterlink;
     try{
        if(chapterlink != ""){
-          chapterdetails(chapterlink, ".img_container", true).then(function(data){
+          chapterdetails(chapterlink, ".img_container", true, false).then(function(data){
              res.status(200).send(data);
           }).catch((e)=>{
              res.status(400).send({"error": e.originalMessage})
@@ -66,7 +66,7 @@ router.get("/jujutsu/chapters", async (req, res) =>{
     const chapterlink = req.body.chapterlink;
     try{
        if(chapterlink != ""){
-          chapterdetails(chapterlink, ".separator img", false).then(function(data){
+          chapterdetails(chapterlink, ".separator img", false, false).then(function(data){
              res.status(200).send(data);
           }).catch((e)=>{
              res.status(400).send({"error": e.originalMessage})
@@ -82,7 +82,7 @@ router.get("/jujutsu/chapters", async (req, res) =>{
     const chapterlink = req.body.chapterlink;
     try{
        if(chapterlink != ""){
-          chapterdetails(chapterlink, "#showmanga-select-chapter img", false).then(function(data){
+          chapterdetails(chapterlink, ".reading-content img", false, true).then(function(data){
              res.status(200).send(data);
           }).catch((e)=>{
              res.status(400).send({"error": e.originalMessage})
@@ -98,7 +98,7 @@ router.get("/jujutsu/chapters", async (req, res) =>{
     const chapterlink = req.body.chapterlink;
     try{
        if(chapterlink != ""){
-          chapterdetails(chapterlink, ".entry-content img", false).then(function(data){
+          chapterdetails(chapterlink, ".entry-content img", false, false).then(function(data){
              res.status(200).send(data);
           }).catch((e)=>{
              res.status(400).send({"error": e.originalMessage})
@@ -114,7 +114,7 @@ router.get("/jujutsu/chapters", async (req, res) =>{
     const chapterlink = req.body.chapterlink;
     try{
        if(chapterlink != ""){
-          chapterdetails(chapterlink, ".entry-content img", false).then(function(data){
+          chapterdetails(chapterlink, ".entry-content img", false, false).then(function(data){
              res.status(200).send(data);
           }).catch((e)=>{
              res.status(400).send({"error": e.originalMessage})
