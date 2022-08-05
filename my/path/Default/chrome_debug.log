@@ -1,6 +1,12 @@
-[0804/211634.106:INFO:CONSOLE(1)] "%cPurpleAds Floating background: #0041D0; color: #fff; border-radius:2px; padding:2px 4px; font-size:11px; Version: 1.0.1", source: https://cdn.purpleads.io/load.js?publisherId=265c1de43660b1c7cce4b3102e8e4a0e:bf4dc8bbe9ea40673ab8fe9a52916f0a4c286e0d334b61121a4f911ed94440a76204f0458937471d5922ea99f49bcc4eff34dda0922fcce349a816d22614422f (1)
-[0804/211634.657:INFO:CONSOLE(1)] "%cPurpleAds Display background: #7434eb; color: #fff; border-radius:2px; padding:2px 4px; font-size:11px; [21:16:34] [8175405875a54ee99339c95cb64d6256] Version: 2.2.2", source: https://cdn.purpleads.io/agent.js?publisherId=265c1de43660b1c7cce4b3102e8e4a0e:bf4dc8bbe9ea40673ab8fe9a52916f0a4c286e0d334b61121a4f911ed94440a76204f0458937471d5922ea99f49bcc4eff34dda0922fcce349a816d22614422f (1)
-[0804/211634.785:INFO:CONSOLE(250)] "Uncaught TagError: adsbygoogle.push() error: No slot size for availableWidth=0", source: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3327298579154787 (250)
-[0804/211634.785:INFO:CONSOLE(250)] "Uncaught TagError: adsbygoogle.push() error: No slot size for availableWidth=0", source: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3327298579154787 (250)
-[0804/211634.785:INFO:CONSOLE(250)] "Uncaught TagError: adsbygoogle.push() error: No slot size for availableWidth=0", source: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3327298579154787 (250)
-[0804/211634.873:INFO:CONSOLE(1)] "OneSignal: Using fallback ES5 Stub for backwards compatibility.", source: https://cdn.onesignal.com/sdks/OneSignalSDK.js (1)
+[0804/212715.612:INFO:CONSOLE(1)] "Version: 1.0.0 - Time: 8/4/2022, 4:11:15 PM API", source: https://tag.vlitag.com/v1/1659604428/26895add1551ad4aabdc386546c1be1e.js?cc=IN (1)
+[0804/212715.628:INFO:CONSOLE(883)] "Uncaught ReferenceError: jQuery is not defined", source: https://muheroacademia.com/ (883)
+[0804/212715.636:INFO:CONSOLE(952)] "Uncaught TypeError: Cannot read properties of undefined (reading 'setLocaleData')", source: https://muheroacademia.com/ (952)
+[0804/212715.636:INFO:CONSOLE(958)] "Uncaught TypeError: Cannot read properties of undefined (reading 'setLocaleData')", source: https://muheroacademia.com/ (958)
+[0804/212715.684:INFO:CONSOLE(2)] "JQMIGRATE: Migrate is installed, version 3.3.2", source: https://muheroacademia.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2 (2)
+[0804/212717.286:WARNING:spdy_session.cc(3502)] Received HEADERS for invalid stream 1
+[0804/212717.317:WARNING:spdy_session.cc(3502)] Received HEADERS for invalid stream 3
+[0804/212717.317:WARNING:spdy_session.cc(3502)] Received HEADERS for invalid stream 5
+[0804/212717.349:WARNING:spdy_session.cc(3502)] Received HEADERS for invalid stream 1
+[0804/212717.349:WARNING:spdy_session.cc(3502)] Received HEADERS for invalid stream 3
+[0804/212720.481:ERROR:ssl_client_socket_impl.cc(983)] handshake failed; returned -1, SSL error code 1, net_error -101
+[0804/212724.777:INFO:CONSOLE(6)] "https://muheroacademia.com/manga/boku-no-hero-academia-chapter-362/", source: pptr://__puppeteer_evaluation_script__ (6)
