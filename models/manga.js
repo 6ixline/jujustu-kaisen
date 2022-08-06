@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const mangaSchema = new mongoose.Schema({
-    ID:{
+    keyid:{
         type: Number,
         validate(value){
             if(value < 0){
@@ -50,3 +50,8 @@ const mangaSchema = new mongoose.Schema({
 }, {
     timestamps: true
 })
+
+const Manga = mongoose.model("Manga", mangaSchema);
+
+module.exports = Manga;
+
