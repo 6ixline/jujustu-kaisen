@@ -8,6 +8,8 @@ const category = require("./routes/category");
 const manga = require("./routes/manga");
 const categoryRoutes = require("./routes/categoryRoutes")
 
+
+
 const app = express()
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -43,6 +45,17 @@ app.use(mangaRoute);
 app.use(category);
 app.use(manga);
 app.use(categoryRoutes);
+
+hbs.registerHelper("select", function(value, options) {
+return options.fn(this)
+    .split('\n')
+    .map(function(v) {
+        v = v.trim();
+    var t = 'value=' + value + ''
+    return ! RegExp(t).test(v) ? v : v.replace(t, t + ' selected="selected"')
+    })
+    .join('\n')
+})
 
 app.listen(port, ()=>{
    console.log(`Server is running on : ${port}`)

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    {{>inc_files}}
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+
+        <div class="table-container">
+            <form action="/manga_form_inter/{{manga._id}}" method="POST">
+                <div class="row">
+                    <div class="mb-3 col-sm-6">
+                        <label for="storageKey" class="form-label">Storage Key</label>
+                        <input type="text" name="storageKey" class="form-control" required value='{{manga.storageKey}}'
+                            id="storageKey">
+                    </div>
+                    <div class="mb-3 col-sm-6">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" name="title" class="form-control" required value='{{manga.title}}'
+                            id="title">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-sm-6">
+                        <label for="chapterTitle" class="form-label">Chapter title</label>
+                        <input type="text" name="chapterTitle" class="form-control" required
+                            value='{{manga.chapterTitle}}' id="chapterTitle">
+                    </div>
+                    <div class="mb-3 col-sm-6">
+                        <label for="comicTitle" class="form-label">Manga title</label>
+                        <input type="text" name="comicTitle" class="form-control" required value='{{manga.comicTitle}}'
+                            id="chapterTitle">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-sm-6">
+                        <label for="url1" class="form-label">Chapter url</label>
+                        <input type="text" name="url1" class="form-control" required value='{{manga.url1}}' id="url1">
+                    </div>
+                    <div class="mb-3 col-sm-6">
+                        <label for="url2" class="form-label">Chapter Images url</label>
+                        <input type="text" name="url2" class="form-control" required value='{{manga.url1}}' id="url2">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-sm-6">
+                        <label for="coverImage" class="form-label">Cover Images url</label>
+                        <input type="text" name="coverImage" class="form-control" required value='{{manga.coverImage}}'
+                            id="coverImage">
+                    </div>
+                    <div class="mb-3 col-sm-6">
+                        <label for="category" class="form-label">Select Category</label>
+                        <select name="category" id="category" class="form-control">
+                            {{#select manga.category}}
+                            <option value="">--Select Cateogry--</option>
+                            {{#each category}}
+                            <option value={{_id}}>{{title}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-info btn-sm text-light">
+                    {{#if manga._id}}
+                    Update
+                    {{else}}
+                    Add New
+                    {{/if}}
+                </button>
+            </form>
+        </div>
+
+    </div>
+    {{>footer}}
+</body>
+
+</html>
