@@ -97,7 +97,7 @@ h1 {
     margin: 5px 0;
 }
 
-.table-container{
+.table-container__manga{
     max-height: 350px;
     overflow-y: scroll;
 }
