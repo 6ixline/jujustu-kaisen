@@ -1,135 +1,97 @@
-const express = require('express');
-const chapertlist = require("../utils/chapters");
-const chapterdetails = require("../utils/chapterdetails");
+const express = require('express')
+const Manga = require('../models/manga')
+const Category = require("../models/category");
 
-const router = new express.Router();
+const router = express.Router();
 
+// creating endpoint for task
+router.post('/manga', async (req, res) => {
+    try {
+        const manga = new Manga({
+            ...req.body
+        })
+        await manga.save()
+        res.status(201).send(manga)
+    } catch (e) {
+        res.status(400).send({ status : "Error", msg: e.message})
+    }
+})
+router.patch('/manga/:id', async (req, res) => {
+    try {
+        const manga = await Manga.findByIdAndUpdate(req.params.id, { ...req.body});
+        res.status(201).send(manga)
+    } catch (e) {
+        res.status(400).send({ status : "Error", msg: e.message})
+    }
+})
 
+// Get By Manga ID
+router.get('/manga/:id', async (req, res) => {
+    try {
+        const manga = await Manga.find({ category : req.params.id });
+        res.status(201).send(manga)
+    } catch (e) {
+        res.status(400).send({ status : "Error", msg: e.message})
+    }
+})
 
-router.get("/jujutsu/chapters", async (req, res) =>{
-    try{ 
-      const data =  await chapertlist("https://readkaisen.com/", ".maniac_posts .chap_tab tr", "a");
-      res.status(200).send(data);
-    }catch(e){
-       res.status(400).send(e);
-    }
- })
- router.get("/demon/chapters", async (req, res) =>{
-    try{ 
-      const data =  await chapertlist("https://demon-slayer-chapters.com/", "#Chapters_List ul li", "a");
-      res.status(200).send(data);
-    }catch(e){
-       res.status(400).send(e);
-    }
- })
- router.get("/hero/chapters", async (req, res) =>{
-    try{ 
-      const data =  await chapertlist("https://muheroacademia.com/", ".version-chap li", ".col-6 a");
-      res.status(200).send(data);
-    }catch(e){
-       res.status(400).send(e);
-    }
- })
- router.get("/one/chapters", async (req, res) =>{
-    try{ 
-      const data =  await chapertlist("https://punch.ldkmanga.com/", "#ceo_latest_comics_widget-3 ul li", "a");
-      res.status(200).send(data);
-    }catch(e){
-       res.status(400).send(e);
-    }
- })
- router.get("/aoi/chapters", async (req, res) =>{
-    try{ 
-      const data =  await chapertlist("https://aoashi.online/", ".su-posts-list-loop li", "a");
-      res.status(200).send(data);
-    }catch(e){
-       res.status(400).send(e);
-    }
- })
- router.post("/jujutsu/chapterdetails", (req, res) =>{
-    const chapterlink = req.body.chapterlink;
-    try{
-       if(chapterlink != ""){
-          chapterdetails(chapterlink, ".img_container", true, false).then(function(data){
-             res.status(200).send(data);
-          }).catch((e)=>{
-             res.status(400).send({"error": e.originalMessage})
-          })
-       }else{
-          res.status(404).send({"error":"Chapter link is empty"});
+// ------------------------------------------------------------------
+
+router.get('/manga_view', async (req,res)=>{
+   const manga = await Manga.find({});
+   res.render('manga_view',{
+       title: 'Manga',
+       manga
+   })
+})
+router.get('/manga_form', async (req,res)=>{
+   const category = await Category.find({});
+   res.render('manga_form',{
+       title: 'Add Manga',
+       category
+   })
+})
+router.post('/manga_form_inter', async (req,res)=>{
+   if(req.body.storageKey){
+       try{
+           const manga = new Manga({
+               ...req.body
+           });
+           await manga.save();
+           res.redirect("/manga_view")
+       }catch(e){
+            console.log(e);
+           res.redirect("/manga_view")
        }
-    }catch(e){
-       res.status(400).send(e);
-    }
- }) 
- router.post("/demon/chapterdetails", (req, res) =>{
-    const chapterlink = req.body.chapterlink;
-    try{
-       if(chapterlink != ""){
-          chapterdetails(chapterlink, ".separator img", false, false).then(function(data){
-             res.status(200).send(data);
-          }).catch((e)=>{
-             res.status(400).send({"error": e.originalMessage})
-          })
-       }else{
-          res.status(404).send({"error":"Chapter link is empty"});
-       }
-    }catch(e){
-       res.status(400).send(e);
-    }
- }) 
- router.post("/hero/chapterdetails", (req, res) =>{
-    const chapterlink = req.body.chapterlink;
-    try{
-       if(chapterlink != ""){
-          chapterdetails(chapterlink, ".reading-content img", false, true).then(function(data){
-             res.status(200).send(data);
-          }).catch((e)=>{
-             res.status(400).send({"error": e.originalMessage})
-          })
-       }else{
-          res.status(404).send({"error":"Chapter link is empty"});
-       }
-    }catch(e){
-       res.status(400).send(e);
-    }
- }) 
- router.post("/one/chapterdetails", (req, res) =>{
-    const chapterlink = req.body.chapterlink;
-    try{
-       if(chapterlink != ""){
-          chapterdetails(chapterlink, ".entry-content img", false, false).then(function(data){
-             res.status(200).send(data);
-          }).catch((e)=>{
-             res.status(400).send({"error": e.originalMessage})
-          })
-       }else{
-          res.status(404).send({"error":"Chapter link is empty"});
-       }
-    }catch(e){
-       res.status(400).send(e);
-    }
- }) 
- router.post("/aoi/chapterdetails", (req, res) =>{
-    const chapterlink = req.body.chapterlink;
-    try{
-       if(chapterlink != ""){
-          chapterdetails(chapterlink, ".entry-content img", false, false).then(function(data){
-             res.status(200).send(data);
-          }).catch((e)=>{
-             res.status(400).send({"error": e.originalMessage})
-          })
-       }else{
-          res.status(404).send({"error":"Chapter link is empty"});
-       }
-    }catch(e){
-       res.status(400).send(e);
-    }
- }) 
- 
- 
- router.get("", (req,res)=>{
-    res.send("Jujustu kaisen...");
- });
- 
+   }else{
+       res.redirect("/manga_view")
+   }
+})
+router.post('/manga_form_inter/:id', async (req,res)=>{
+
+   if(req.body.storageKey){
+       const manga = await Manga.findByIdAndUpdate(req.params.id, { ...req.body });
+   }
+   
+   res.redirect('/manga_view')
+})
+router.get('/manga_form/:id', async (req,res)=>{
+   const manga = await Manga.findById(req.params.id)
+   const category = await Category.find({});
+   res.render('manga_form',{
+       title: 'Update Category',
+       manga,
+       category
+   })
+})
+router.get('/mangaDelete/:id', async (req,res)=>{
+   try{
+       await Manga.findByIdAndDelete(req.params.id)
+       res.redirect('/manga_view')
+   }catch(e){
+       res.redirect('/manga_view')
+   }
+   
+})
+
 module.exports = router;

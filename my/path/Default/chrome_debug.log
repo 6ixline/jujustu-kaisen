@@ -1,6 +1,46 @@
-[0804/211634.106:INFO:CONSOLE(1)] "%cPurpleAds Floating background: #0041D0; color: #fff; border-radius:2px; padding:2px 4px; font-size:11px; Version: 1.0.1", source: https://cdn.purpleads.io/load.js?publisherId=265c1de43660b1c7cce4b3102e8e4a0e:bf4dc8bbe9ea40673ab8fe9a52916f0a4c286e0d334b61121a4f911ed94440a76204f0458937471d5922ea99f49bcc4eff34dda0922fcce349a816d22614422f (1)
-[0804/211634.657:INFO:CONSOLE(1)] "%cPurpleAds Display background: #7434eb; color: #fff; border-radius:2px; padding:2px 4px; font-size:11px; [21:16:34] [8175405875a54ee99339c95cb64d6256] Version: 2.2.2", source: https://cdn.purpleads.io/agent.js?publisherId=265c1de43660b1c7cce4b3102e8e4a0e:bf4dc8bbe9ea40673ab8fe9a52916f0a4c286e0d334b61121a4f911ed94440a76204f0458937471d5922ea99f49bcc4eff34dda0922fcce349a816d22614422f (1)
-[0804/211634.785:INFO:CONSOLE(250)] "Uncaught TagError: adsbygoogle.push() error: No slot size for availableWidth=0", source: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3327298579154787 (250)
-[0804/211634.785:INFO:CONSOLE(250)] "Uncaught TagError: adsbygoogle.push() error: No slot size for availableWidth=0", source: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3327298579154787 (250)
-[0804/211634.785:INFO:CONSOLE(250)] "Uncaught TagError: adsbygoogle.push() error: No slot size for availableWidth=0", source: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3327298579154787 (250)
-[0804/211634.873:INFO:CONSOLE(1)] "OneSignal: Using fallback ES5 Stub for backwards compatibility.", source: https://cdn.onesignal.com/sdks/OneSignalSDK.js (1)
+[0807/165127.436:INFO:CONSOLE(883)] "Uncaught ReferenceError: jQuery is not defined", source: https://muheroacademia.com/ (883)
+[0807/165127.444:INFO:CONSOLE(952)] "Uncaught TypeError: Cannot read properties of undefined (reading 'setLocaleData')", source: https://muheroacademia.com/ (952)
+[0807/165127.444:INFO:CONSOLE(958)] "Uncaught TypeError: Cannot read properties of undefined (reading 'setLocaleData')", source: https://muheroacademia.com/ (958)
+[0807/165127.460:INFO:CONSOLE(1)] "Version: 1.0.0 - Time: 8/4/2022, 4:11:15 PM API", source: https://tag.vlitag.com/v1/1659685180/26895add1551ad4aabdc386546c1be1e.js?cc=IN (1)
+[0807/165127.532:INFO:CONSOLE(2)] "JQMIGRATE: Migrate is installed, version 3.3.2", source: https://muheroacademia.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2 (2)
+[0807/165129.067:WARNING:spdy_session.cc(3502)] Received HEADERS for invalid stream 1
+[0807/165129.067:WARNING:spdy_session.cc(3502)] Received HEADERS for invalid stream 3
+[0807/165129.115:WARNING:spdy_session.cc(3502)] Received HEADERS for invalid stream 1
+[0807/165129.139:WARNING:spdy_session.cc(3502)] Received HEADERS for invalid stream 3
+[0807/165132.389:ERROR:ssl_client_socket_impl.cc(983)] handshake failed; returned -1, SSL error code 1, net_error -101
+[0807/165132.556:ERROR:ssl_client_socket_impl.cc(983)] handshake failed; returned -1, SSL error code 1, net_error -101
+[0807/165132.764:ERROR:ssl_client_socket_impl.cc(983)] handshake failed; returned -1, SSL error code 1, net_error -101
+[0807/165132.924:ERROR:ssl_client_socket_impl.cc(983)] handshake failed; returned -1, SSL error code 1, net_error -101
+[0807/165208.951:ERROR:cache_util_win.cc(20)] Unable to move the cache: Access is denied. (0x5)
+[0807/165208.951:ERROR:disk_cache.cc(205)] Unable to create cache
+[0807/165208.951:ERROR:shader_disk_cache.cc(617)] Shader Cache Creation failed: -2
+[0807/165209.311:ERROR:cache_util_win.cc(20)] Unable to move the cache: Access is denied. (0x5)
+[0807/165209.311:ERROR:disk_cache.cc(205)] Unable to create cache
+[0807/165211.122:ERROR:cache_util_win.cc(20)] Unable to move the cache: Access is denied. (0x5)
+[0807/165211.122:ERROR:disk_cache.cc(205)] Unable to create cache
+[0807/165211.122:ERROR:shader_disk_cache.cc(617)] Shader Cache Creation failed: -2
+[0807/165212.381:INFO:CONSOLE(883)] "Uncaught ReferenceError: jQuery is not defined", source: https://muheroacademia.com/ (883)
+[0807/165212.381:INFO:CONSOLE(952)] "Uncaught TypeError: Cannot read properties of undefined (reading 'setLocaleData')", source: https://muheroacademia.com/ (952)
+[0807/165212.381:INFO:CONSOLE(958)] "Uncaught TypeError: Cannot read properties of undefined (reading 'setLocaleData')", source: https://muheroacademia.com/ (958)
+[0807/165214.629:INFO:CONSOLE(2)] "JQMIGRATE: Migrate is installed, version 3.3.2", source: https://muheroacademia.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2 (2)
+[0807/165217.208:INFO:CONSOLE(1)] "Version: 1.0.0 - Time: 8/4/2022, 4:11:15 PM API", source: https://tag.vlitag.com/v1/1659685180/26895add1551ad4aabdc386546c1be1e.js?cc=IN (1)
+[0807/165219.480:WARNING:spdy_session.cc(3502)] Received HEADERS for invalid stream 1
+[0807/165219.480:WARNING:spdy_session.cc(3502)] Received HEADERS for invalid stream 3
+[0807/165219.528:WARNING:spdy_session.cc(3502)] Received HEADERS for invalid stream 1
+[0807/165219.560:WARNING:spdy_session.cc(3502)] Received HEADERS for invalid stream 3
+[0807/165221.009:ERROR:cache_util_win.cc(20)] Unable to move the cache: Access is denied. (0x5)
+[0807/165221.009:ERROR:disk_cache.cc(205)] Unable to create cache
+[0807/165221.009:ERROR:shader_disk_cache.cc(617)] Shader Cache Creation failed: -2
+[0807/165221.385:ERROR:cache_util_win.cc(20)] Unable to move the cache: Access is denied. (0x5)
+[0807/165221.385:ERROR:disk_cache.cc(205)] Unable to create cache
+[0807/165222.490:ERROR:cache_util_win.cc(20)] Unable to move the cache: Access is denied. (0x5)
+[0807/165222.490:ERROR:disk_cache.cc(205)] Unable to create cache
+[0807/165222.490:ERROR:shader_disk_cache.cc(617)] Shader Cache Creation failed: -2
+[0807/165222.754:ERROR:ssl_client_socket_impl.cc(983)] handshake failed; returned -1, SSL error code 1, net_error -101
+[0807/165223.026:ERROR:ssl_client_socket_impl.cc(983)] handshake failed; returned -1, SSL error code 1, net_error -101
+[0807/165223.138:INFO:CONSOLE(2)] "Uncaught TypeError: e.indexOf is not a function", source: https://punch.ldkmanga.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0 (2)
+[0807/165223.146:INFO:CONSOLE(137)] "Failed to set referrer policy: The value '' is not one of 'always', 'default', 'never', 'origin-when-crossorigin', 'no-referrer', 'no-referrer-when-downgrade', 'origin', 'origin-when-cross-origin', 'same-origin', 'strict-origin', 'strict-origin-when-cross-origin', or 'unsafe-url'. The referrer policy has been left unchanged.", source: https://punch.ldkmanga.com/ (137)
+[0807/165223.162:ERROR:ssl_client_socket_impl.cc(983)] handshake failed; returned -1, SSL error code 1, net_error -101
+[0807/165223.394:ERROR:ssl_client_socket_impl.cc(983)] handshake failed; returned -1, SSL error code 1, net_error -101
+[0807/165227.037:INFO:CONSOLE(1)] "OneSignal: Using fallback ES5 Stub for backwards compatibility.", source: https://cdn.onesignal.com/sdks/OneSignalSDK.js?ver=5.9.3 (1)
+[0807/165233.313:INFO:CONSOLE(6)] "https://punch.ldkmanga.com/manga/one-punch-man-chapter-168/", source: pptr://__puppeteer_evaluation_script__ (6)
