@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    {{>inc_files}}
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+        
+        <div class="table-container">
+            <form action="/category_form_inter/{{category._id}}" method="POST">
+                <div class="mb-3 col-sm-6">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" name="title" class="form-control" required value='{{category.title}}' id="title" >
+                </div>
+                <button type="submit" class="btn btn-info btn-sm text-light">
+                    {{#if category._id}}
+                        Update
+                    {{else}}
+                        Add New
+                    {{/if}}
+                </button>
+            </form>
+        </div>
+
+    </div>
+    {{>footer}}
+</body>
+
+</html>

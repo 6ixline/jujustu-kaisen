@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    {{>inc_files}}
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+
+        <div class="row">
+            <div class="col-sm-6">
+                <a href="/category_form" class="mb-3 btn btn-sm btn-info text-light">Add Category</a>
+            </div>
+        </div>
+        <div class="table-container">
+            <table class="table table-info table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each category}}
+                        <tr>
+                            <td>{{title}}</td>
+                            <td><a href="/category/{{_id}}" class="pl-2"><i class="fa-solid fa-pen-to-square"></i></a> <a href="/categoryDelete/{{_id}}" class="px-2 text-danger"><i class="fa-solid fa-trash-can"></i></a></td>
+                        </tr>
+                    {{/each}}
+                    <tr>
+                       
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+    {{>footer}}
+</body>
+
+</html>
