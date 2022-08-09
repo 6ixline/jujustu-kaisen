@@ -157,7 +157,7 @@ router.post("/cho/chapterdetails", (req, res) => {
 router.get("/mangadata", async (req, res) => {
    try {
       let data = [];
-      const categories = await Category.find({}).sort({ createdAt: -1 });
+      const categories = await Category.find({}).sort({ order: -1 });
       for (const element of categories) {
          let mangaData = await Manga.find({ category: element._id })
          data.push({ "title": element.title, "manga": mangaData })   
