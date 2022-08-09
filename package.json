@@ -20,7 +20,8 @@
     "nodemon": "^2.0.19",
     "puppeteer": "^15.5.0",
     "request": "^2.88.2",
-    "store2": "^2.14.2"
+    "store2": "^2.14.2",
+    "user-agents": "^1.0.1102"
   },
   "devDependencies": {
     "dotenv": "^16.0.1"

@@ -1,4 +1,5 @@
 const pp = require('puppeteer');
+var userAgent = require("user-agents");
 
 const minimal_args = [
     '--autoplay-policy=user-gesture-required',
@@ -46,6 +47,7 @@ async function chapterList(url, chapterroute, linkRoute){
             userDataDir: './my/path'
         });
         const page = await brower.newPage();
+        await page.setUserAgent(userAgent.toString());
         await page.goto(url);
         const data = await page.evaluate(function(chapterroute, linkRoute){
             const chapterLinks = document.querySelectorAll(chapterroute);
