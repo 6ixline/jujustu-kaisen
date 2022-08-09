@@ -16,6 +16,14 @@ router.get("/jujutsu/chapters", async (req, res) => {
       res.status(400).send(e);
    }
 })
+router.get("/cho/chapters", async (req, res) => {
+   try {
+      const data = await chapertlist("https://www.choujinx.net/", ".listing-chapters_wrap li", "div div a");
+      res.status(200).send(data);
+   } catch (e) {
+      res.status(400).send(e);
+   }
+})
 router.get("/demon/chapters", async (req, res) => {
    try {
       const data = await chapertlist("https://demon-slayer-chapters.com/", "#Chapters_List ul li", "a");
@@ -128,6 +136,22 @@ router.post("/aoi/chapterdetails", (req, res) => {
       res.status(400).send(e);
    }
 })
+router.post("/cho/chapterdetails", (req, res) => {
+   const chapterlink = req.body.chapterlink;
+   try {
+      if (chapterlink != "") {
+         chapterdetails(chapterlink, ".reading-content .page-break", true, false).then(function (data) {
+            res.status(200).send(data);
+         }).catch((e) => {
+            res.status(400).send({ "error": e.originalMessage })
+         })
+      } else {
+         res.status(404).send({ "error": "Chapter link is empty" });
+      }
+   } catch (e) {
+      res.status(400).send(e);
+   }
+})
 
 // Get All Manga data
 router.get("/mangadata", async (req, res) => {
@@ -144,18 +168,6 @@ router.get("/mangadata", async (req, res) => {
       res.status(400).send(e);
    }
 })
-
-
-async function fetch_data(arr) {
-   let data = ['test'];
-   for (const element of arr) {
-      consoel.log(element)
-      // let mangaData = await Manga.find({ category: element._id })
-      // data.push({ "title": element.title, "manga": mangaData })   
-   }
-   return data;
-}
-
 
 
 module.exports = router;
