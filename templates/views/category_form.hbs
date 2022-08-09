@@ -19,6 +19,13 @@
                     <label for="title" class="form-label">Title</label>
                     <input type="text" name="title" class="form-control" required value='{{category.title}}' id="title" >
                 </div>
+                  <div class="row">
+                    <div class="mb-3">
+                        <label for="coverImage" class="form-label">Order</label>
+                        <input type="number" name="order" class="form-control" required value='{{category.order}}'
+                            id="order">
+                    </div>
+                </div>
                 <button type="submit" class="btn btn-info btn-sm text-light">
                     {{#if category._id}}
                         Update

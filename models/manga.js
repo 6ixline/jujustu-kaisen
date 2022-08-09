@@ -41,10 +41,6 @@ const mangaSchema = new mongoose.Schema({
         type: String,
         trim: true
     },
-    order:{
-        type: Number,
-        default: 1
-    },
     category: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
