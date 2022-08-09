@@ -24,7 +24,6 @@
                     <tr>
                         <th scope="col">Title</th>
                         <th scope="col">Cover Image</th>
-                        <th scope="col">Chapter Title</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -33,7 +32,6 @@
                         <tr>
                             <td>{{title}}</td>
                             <td><img src={{coverImage}} width="80" alt=""></td>
-                            <td>{{chapterTitle}}</td>
                             <td><a href="/manga_form/{{_id}}" class="pl-2"><i class="fa-solid fa-pen-to-square"></i></a> <a href="/mangaDelete/{{_id}}" class="px-2 text-danger"><i class="fa-solid fa-trash-can"></i></a></td>
                         </tr>
                     {{/each}}

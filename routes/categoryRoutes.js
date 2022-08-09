@@ -1,21 +1,22 @@
 const express = require("express");
 const Category = require('../models/category');
+const auth = require('../middleware/auth');
 
 const router = express.Router();
 
-router.get('/category_view', async (req,res)=>{
+router.get('/category_view', auth, async (req,res)=>{
     const category = await Category.find({});
     res.render('category_view',{
         title: 'Categories',
         category
     })
 })
-router.get('/category_form', async (req,res)=>{
+router.get('/category_form', auth, async (req,res)=>{
     res.render('category_form',{
         title: 'Add Category',
     })
 })
-router.post('/category_form_inter', async (req,res)=>{
+router.post('/category_form_inter', auth, async (req,res)=>{
     if(req.body.title){
         try{
             const category = new Category({
@@ -30,7 +31,7 @@ router.post('/category_form_inter', async (req,res)=>{
         res.redirect("/category_view")
     }
 })
-router.post('/category_form_inter/:id', async (req,res)=>{
+router.post('/category_form_inter/:id', auth, async (req,res)=>{
 
     if(req.body.title){
         const category = await Category.findByIdAndUpdate(req.params.id, { ...req.body });
@@ -38,14 +39,14 @@ router.post('/category_form_inter/:id', async (req,res)=>{
     
     res.redirect('/category_view')
 })
-router.get('/category/:id', async (req,res)=>{
+router.get('/category/:id', auth, async (req,res)=>{
     const category = await Category.findById(req.params.id)
     res.render('category_form',{
         title: 'Update Category',
         category
     })
 })
-router.get('/categoryDelete/:id', async (req,res)=>{
+router.get('/categoryDelete/:id', auth, async (req,res)=>{
     try{
         const category = await Category.findByIdAndDelete(req.params.id)
         res.redirect('/category_view')

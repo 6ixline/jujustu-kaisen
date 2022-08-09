@@ -7,8 +7,9 @@ const mangaRoute = require("./routes/mangaRoutes");
 const category = require("./routes/category");
 const manga = require("./routes/manga");
 const categoryRoutes = require("./routes/categoryRoutes")
-
-
+const login = require("./routes/loginRoutes")
+const auth = require("./middleware/auth")
+const local = require('./utils/storage');
 
 const app = express()
 // parse application/x-www-form-urlencoded
@@ -32,15 +33,17 @@ app.use(express.static(publicDirectoryPath))
 
 app.use(express.json())
 
-app.get('/',(req,res)=>{
+app.get('/',auth,(req,res)=>{
     res.render('index',{
     })
 })
 
 
+
 const port = process.env.PORT || 3000
 app.use(express.json());
 
+app.use(login);
 app.use(mangaRoute);
 app.use(category);
 app.use(manga);

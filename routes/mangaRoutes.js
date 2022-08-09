@@ -1,11 +1,12 @@
 const express = require('express')
 const Manga = require('../models/manga')
 const Category = require("../models/category");
+const auth = require("../middleware/auth");
 
 const router = express.Router();
 
 // creating endpoint for task
-router.post('/manga', async (req, res) => {
+router.post('/manga', auth, async (req, res) => {
     try {
         const manga = new Manga({
             ...req.body
@@ -16,7 +17,7 @@ router.post('/manga', async (req, res) => {
         res.status(400).send({ status : "Error", msg: e.message})
     }
 })
-router.patch('/manga/:id', async (req, res) => {
+router.patch('/manga/:id', auth, async (req, res) => {
     try {
         const manga = await Manga.findByIdAndUpdate(req.params.id, { ...req.body});
         res.status(201).send(manga)
@@ -26,7 +27,7 @@ router.patch('/manga/:id', async (req, res) => {
 })
 
 // Get By Manga ID
-router.get('/manga/:id', async (req, res) => {
+router.get('/manga/:id', auth, async (req, res) => {
     try {
         const manga = await Manga.find({ category : req.params.id });
         res.status(201).send(manga)
@@ -37,21 +38,21 @@ router.get('/manga/:id', async (req, res) => {
 
 // ------------------------------------------------------------------
 
-router.get('/manga_view', async (req,res)=>{
+router.get('/manga_view', auth, async (req,res)=>{
    const manga = await Manga.find({});
    res.render('manga_view',{
        title: 'Manga',
        manga
    })
 })
-router.get('/manga_form', async (req,res)=>{
+router.get('/manga_form', auth, async (req,res)=>{
    const category = await Category.find({});
    res.render('manga_form',{
        title: 'Add Manga',
        category
    })
 })
-router.post('/manga_form_inter', async (req,res)=>{
+router.post('/manga_form_inter', auth, async (req,res)=>{
    if(req.body.storageKey){
        try{
            const manga = new Manga({
@@ -67,7 +68,7 @@ router.post('/manga_form_inter', async (req,res)=>{
        res.redirect("/manga_view")
    }
 })
-router.post('/manga_form_inter/:id', async (req,res)=>{
+router.post('/manga_form_inter/:id', auth, async (req,res)=>{
 
    if(req.body.storageKey){
        const manga = await Manga.findByIdAndUpdate(req.params.id, { ...req.body });
@@ -75,7 +76,7 @@ router.post('/manga_form_inter/:id', async (req,res)=>{
    
    res.redirect('/manga_view')
 })
-router.get('/manga_form/:id', async (req,res)=>{
+router.get('/manga_form/:id', auth, async (req,res)=>{
    const manga = await Manga.findById(req.params.id)
    const category = await Category.find({});
    res.render('manga_form',{
@@ -84,7 +85,7 @@ router.get('/manga_form/:id', async (req,res)=>{
        category
    })
 })
-router.get('/mangaDelete/:id', async (req,res)=>{
+router.get('/mangaDelete/:id', auth, async (req,res)=>{
    try{
        await Manga.findByIdAndDelete(req.params.id)
        res.redirect('/manga_view')
