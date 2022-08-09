@@ -9,7 +9,6 @@ const manga = require("./routes/manga");
 const categoryRoutes = require("./routes/categoryRoutes")
 const login = require("./routes/loginRoutes")
 const auth = require("./middleware/auth")
-const local = require('./utils/storage');
 
 const app = express()
 // parse application/x-www-form-urlencoded

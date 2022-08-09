@@ -1,5 +1,5 @@
 const express = require('express');
-const ls = require('../utils/storage');
+const store = require("store2");
 
 
 const router = express.Router();
@@ -15,14 +15,14 @@ router.post("/login", (req,res)=>{
     if(req.body.username != "" && req.body.password != ""){
         if(req.body.username == process.env.EMAIL && req.body.password == process.env.PASSWORD){
             const data = JSON.stringify(req.body);
-            ls.setItem('user', data);
+            store('user', data);
         }
     }
 
     res.redirect("/");
 })
 router.get("/logout", (req,res)=>{
-    ls.removeItem("user");    
+    store.clear();    
     res.redirect("/");
 })
 
