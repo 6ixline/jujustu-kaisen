@@ -159,7 +159,7 @@ router.get("/mangadata", async (req, res) => {
       let data = [];
       const categories = await Category.find({}).sort({ order: -1 });
       for (const element of categories) {
-         let mangaData = await Manga.find({ category: element._id })
+         let mangaData = await Manga.find({ category: element._id, 'status': 'active' })
          data.push({ "title": element.title, "manga": mangaData })   
       }
       res.status(200).send(data);

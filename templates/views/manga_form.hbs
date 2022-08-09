@@ -68,6 +68,19 @@
                         </select>
                     </div>
                 </div>
+
+                 <div class="row">
+                    <div class="mb-3">
+                        <label for="status" class="form-label">Select Status</label>
+                        <select name="status" id="status" class="form-control">
+                            {{#select manga.status}}
+                            <option value="">--Select Cateogry--</option>
+                            <option value='active'>Active</option>
+                            <option value='inactive'>Inactive</option>
+                            {{/select}}
+                        </select>
+                    </div>
+                </div>
               
 
                 <button type="submit" class="btn btn-info btn-sm text-light">
