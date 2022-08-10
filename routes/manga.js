@@ -186,7 +186,7 @@ router.get("/mangadata", async (req, res) => {
          let mangaData = await Manga.find({ category: element._id, 'status': 'active' }).sort({order: 1})
          data.push({ "title": element.title, "manga": mangaData })   
       }
-      res.status(200).send(categories);
+      res.status(200).send(data);
 
    } catch (e) {
       res.status(400).send(e);
