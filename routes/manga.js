@@ -181,12 +181,12 @@ router.post("/bc/chapterdetails", (req, res) => {
 router.get("/mangadata", async (req, res) => {
    try {
       let data = [];
-      const categories = await Category.find({'status': "active"}).sort({ order: -1 });
+      const categories = await Category.find({status: 'active'}).sort({ order: -1 });
       for (const element of categories) {
          let mangaData = await Manga.find({ category: element._id, 'status': 'active' }).sort({order: 1})
          data.push({ "title": element.title, "manga": mangaData })   
       }
-      res.status(200).send(data);
+      res.status(200).send(categories);
 
    } catch (e) {
       res.status(400).send(e);

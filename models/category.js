@@ -13,7 +13,8 @@ const categorySchema = new mongoose.Schema({
     },
     status:{
         type: String,
-        default: "active"
+        default: 'active',
+        trim: true
     }
 },{
     timestamps:true
