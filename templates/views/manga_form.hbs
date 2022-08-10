@@ -70,15 +70,20 @@
                 </div>
 
                  <div class="row">
-                    <div class="mb-3">
+                    <div class="mb-3 col-sm-6">
                         <label for="status" class="form-label">Select Status</label>
                         <select name="status" id="status" class="form-control">
-                            {{#select manga.status}}
-                            <option value="">--Select Cateogry--</option>
-                            <option value='active'>Active</option>
-                            <option value='inactive'>Inactive</option>
-                            {{/select}}
+                            {{#selects manga.status}}
+                            <option value="">--Select Status--</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                            {{/selects}}
                         </select>
+                    </div>
+                    <div class="mb-3 col-sm-6">
+                        <label for="status" class="form-label">Order</label>
+                          <input type="text" name="order" class="form-control" required value='{{manga.order}}'
+                            id="order">
                     </div>
                 </div>
               

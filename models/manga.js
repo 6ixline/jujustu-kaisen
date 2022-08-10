@@ -49,6 +49,10 @@ const mangaSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'Category'
+    },
+    order: {
+        type: Number,
+        default: 1 
     }
 
 }, {

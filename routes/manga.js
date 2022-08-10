@@ -16,6 +16,14 @@ router.get("/jujutsu/chapters", async (req, res) => {
       res.status(400).send(e);
    }
 })
+router.get("/bc/chapters", async (req, res) => {
+   try {
+      const data = await chapertlist("https://bcmanga.org/", ".entry-content .su-post", "a");
+      res.status(200).send(data);
+   } catch (e) {
+      res.status(400).send(e);
+   }
+})
 router.get("/cho/chapters", async (req, res) => {
    try {
       const data = await chapertlist("https://www.choujinx.net/", ".listing-chapters_wrap li", "div div a");
@@ -152,6 +160,22 @@ router.post("/cho/chapterdetails", (req, res) => {
       res.status(400).send(e);
    }
 })
+router.post("/bc/chapterdetails", (req, res) => {
+   const chapterlink = req.body.chapterlink;
+   try {
+      if (chapterlink != "") {
+         chapterdetails(chapterlink, ".entry-content img", false, false).then(function (data) {
+            res.status(200).send(data);
+         }).catch((e) => {
+            res.status(400).send({ "error": e.originalMessage })
+         })
+      } else {
+         res.status(404).send({ "error": "Chapter link is empty" });
+      }
+   } catch (e) {
+      res.status(400).send(e);
+   }
+})
 
 // Get All Manga data
 router.get("/mangadata", async (req, res) => {
@@ -159,7 +183,7 @@ router.get("/mangadata", async (req, res) => {
       let data = [];
       const categories = await Category.find({}).sort({ order: -1 });
       for (const element of categories) {
-         let mangaData = await Manga.find({ category: element._id, 'status': 'active' })
+         let mangaData = await Manga.find({ category: element._id, 'status': 'active' }).sort({order: 1})
          data.push({ "title": element.title, "manga": mangaData })   
       }
       res.status(200).send(data);
