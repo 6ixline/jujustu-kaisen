@@ -10,6 +10,10 @@ const categorySchema = new mongoose.Schema({
     order:{
         type: Number,
         default: 1
+    },
+    status:{
+        type: String,
+        default: "active"
     }
 },{
     timestamps:true
