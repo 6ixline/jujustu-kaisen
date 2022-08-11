@@ -42,7 +42,7 @@ router.get("/demon/chapters", async (req, res) => {
 })
 router.get("/hero/chapters", async (req, res) => {
    try {
-      const data = await chapertlist("https://muheroacademia.com/", ".version-chap li", ".col-6 a");
+      const data = await chapertlist("https://mangaheroacademia.online/", ".ms-homepage-container li", "a");
       res.status(200).send(data);
    } catch (e) {
       res.status(400).send(e);
@@ -100,7 +100,7 @@ router.post("/hero/chapterdetails", (req, res) => {
    const chapterlink = req.body.chapterlink;
    try {
       if (chapterlink != "") {
-         chapterdetails(chapterlink, ".reading-content img", false, true).then(function (data) {
+         chapterdetails(chapterlink, ".entry-content img", false, true).then(function (data) {
             res.status(200).send(data);
          }).catch((e) => {
             res.status(400).send({ "error": e.originalMessage })
