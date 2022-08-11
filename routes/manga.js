@@ -108,7 +108,7 @@ router.post("/hero/chapterdetails", (req, res) => {
    const chapterlink = req.body.chapterlink;
    try {
       if (chapterlink != "") {
-         chapterdetails(chapterlink, ".entry-content center img", false, true).then(function (data) {
+         chapterdetails(chapterlink, ".entry-content center img", false, false).then(function (data) {
             res.status(200).send(data);
          }).catch((e) => {
             res.status(400).send({ "error": e.originalMessage })
