@@ -6,6 +6,7 @@ require('./db/mongoose')
 const mangaRoute = require("./routes/mangaRoutes");
 const category = require("./routes/category");
 const manga = require("./routes/manga");
+const mangaDetails = require("./routes/mangaDetails");
 const categoryRoutes = require("./routes/categoryRoutes")
 const login = require("./routes/loginRoutes")
 const auth = require("./middleware/auth")
@@ -47,6 +48,7 @@ app.use(mangaRoute);
 app.use(category);
 app.use(manga);
 app.use(categoryRoutes);
+app.use("/manga",mangaDetails)
 
 hbs.registerHelper("select", function(value, options) {
 return options.fn(this)

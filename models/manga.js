@@ -53,6 +53,24 @@ const mangaSchema = new mongoose.Schema({
     order: {
         type: Number,
         default: 1 
+    },
+    mangaUrl: {
+        type: String
+    },
+    chapterRoute:{
+        type: String
+    },
+    chapterRouteEnd:{
+        type: String
+    },
+    chapterImageEnd:{
+        type: String
+    },
+    imageDirect:{
+        type: Boolean
+    },
+    scroll:{
+        type: Boolean
     }
 
 }, {
