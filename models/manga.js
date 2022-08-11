@@ -29,14 +29,6 @@ const mangaSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    url1:{
-        type: String,
-        trim: true
-    },
-    url2:{
-        type: String,
-        trim: true
-    },
     coverImage:{
         type: String,
         trim: true
