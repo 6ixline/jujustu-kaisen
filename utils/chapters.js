@@ -54,8 +54,6 @@ async function chapterList(url, chapterroute, linkRoute){
             const array = [];
             let episode = chapterLinks.length;
 
-            console.log(chapterLinks[0].querySelector(linkRoute).getAttribute("href"))
-
             for(i=0; i < chapterLinks.length; i++){
                 if(chapterLinks[i].querySelector(linkRoute) != null){
                     array.push(chapterLinks[i].querySelector(linkRoute).getAttribute("href"));

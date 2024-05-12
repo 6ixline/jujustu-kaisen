@@ -1,9 +1,8 @@
 const express = require("express");
 const crypto = require("crypto");
-const NodeCache = require( "node-cache" );
 const chapertlist = require("../utils/chapters");
 const chapterdetails = require("../utils/chapterdetails");
-const myCache = new NodeCache();
+const myCache = require("../utils/cache");
 
 const router = express.Router();
 const secret = process.env.SECRET;

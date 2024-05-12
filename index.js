@@ -55,7 +55,6 @@ return options.fn(this)
     .split('\n')
     .map(function(v) {
         v = v.trim();
-        console.log(v, value);
     var t = 'value=' + value + ''
     return ! RegExp(t).test(v) ? v : v.replace(t, t + ' selected="selected"')
     })
