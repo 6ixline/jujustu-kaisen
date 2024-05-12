@@ -1,3 +1,3 @@
-2022/08/04-21:04:13.411 26bc Reusing MANIFEST C:\coding\react\jujustu-kaisen\my\path\Default\Sync Data\LevelDB/MANIFEST-000001
-2022/08/04-21:04:13.411 26bc Recovering log #3
-2022/08/04-21:04:13.412 26bc Reusing old log C:\coding\react\jujustu-kaisen\my\path\Default\Sync Data\LevelDB/000003.log 
+2024/05/12-10:43:03.837 246c Reusing MANIFEST C:\coding\mern\jujustu-kaisen\my\path\Default\Sync Data\LevelDB/MANIFEST-000001
+2024/05/12-10:43:03.837 246c Recovering log #3
+2024/05/12-10:43:03.838 246c Reusing old log C:\coding\mern\jujustu-kaisen\my\path\Default\Sync Data\LevelDB/000003.log 

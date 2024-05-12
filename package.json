@@ -17,6 +17,7 @@
     "hbs": "^4.2.0",
     "mongodb": "^4.8.1",
     "mongoose": "^6.5.1",
+    "node-cache": "^5.1.2",
     "nodemon": "^2.0.19",
     "puppeteer": "^15.5.0",
     "request": "^2.88.2",

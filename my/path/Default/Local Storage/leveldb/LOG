@@ -1,3 +1,5 @@
-2022/08/11-17:28:08.857 2d9c Reusing MANIFEST C:\coding\mern\jujustu-kaisen\my\path\Default\Local Storage\leveldb/MANIFEST-000001
-2022/08/11-17:28:08.858 2d9c Recovering log #11
-2022/08/11-17:28:08.859 2d9c Reusing old log C:\coding\mern\jujustu-kaisen\my\path\Default\Local Storage\leveldb/000011.log 
+2024/05/12-10:53:17.779 30b8 Reusing MANIFEST C:\coding\mern\jujustu-kaisen\my\path\Default\Local Storage\leveldb/MANIFEST-000001
+2024/05/12-10:53:17.780 30b8 Recovering log #11
+2024/05/12-10:53:17.781 30b8 Level-0 table #13: started
+2024/05/12-10:53:17.787 30b8 Level-0 table #13: 14148 bytes OK
+2024/05/12-10:53:17.789 30b8 Delete type=0 #11
